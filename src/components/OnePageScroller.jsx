@@ -34,8 +34,8 @@ export default function OnePageScroller({ children, page, setPage }) {
 		} else {
 			let st = 0;
 			let rs = 0;
-			scrollDiv.addEventListener('touchstart', ({ touches }) => { console.log('ts'); st = touches[0].pageY });
-			scrollDiv.addEventListener('touchmove', ({ touches }) => { console.log('tm'); rs = st - touches[0].pageY });
+			scrollDiv.addEventListener('touchstart', ({ touches }) => { st = touches[0].pageY });
+			scrollDiv.addEventListener('touchmove', ({ touches }) => { rs = st - touches[0].pageY });
 			scrollDiv.addEventListener('touchend', () => { setTimeout(() => scrollHandler(rs), 100) });
 		}
 
