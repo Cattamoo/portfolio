@@ -3,8 +3,6 @@ import Layout from "../components/Layout";
 
 export default function Title() {
 	return (
-		<Layout>
-			Title
-		</Layout>
+		<Layout typingEffect={true} title="Hello, Cattamoo!" />
 	);
 }

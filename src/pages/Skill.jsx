@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 
 export default function Skill() {
 	return (
-		<Layout>
+		<Layout title="Skill">
 			Skill
 		</Layout>
 	);
