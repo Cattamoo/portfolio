@@ -1,10 +1,13 @@
 import React, {useEffect, useRef} from 'react';
+import { isDesktop } from "react-device-detect";
 
 export default function OnePageScroller({ children, page, setPage }) {
 	const scrollDivRef = useRef();
-	const scrollHandler = (e) => {
+	const wheelHandler = (e) => {
 		e.preventDefault();
-		const { deltaY } = e;
+		scrollHandler(e.deltaY);
+	}
+	const scrollHandler = (deltaY) => {
 		if(deltaY > 0) {
 			// 다음페이지
 			scroll(page + 1);
@@ -25,7 +28,20 @@ export default function OnePageScroller({ children, page, setPage }) {
 		});
 	}
 	useEffect(() => {
-		scrollDivRef.current.addEventListener('wheel', scrollHandler, { passive: false })
+		const scrollDiv = scrollDivRef.current;
+		if(isDesktop) {
+			scrollDiv.addEventListener('wheel', wheelHandler, { passive: false })
+		} else {
+			let st = 0;
+			let rs = 0;
+			scrollDiv.addEventListener('touchstart', ({ touches }) => { console.log('ts'); st = touches[0].pageY });
+			scrollDiv.addEventListener('touchmove', ({ touches }) => { console.log('tm'); rs = st - touches[0].pageY });
+			scrollDiv.addEventListener('touchend', () => { setTimeout(() => scrollHandler(rs), 100) });
+		}
+
+		return () => {
+			scrollDiv.removeEventListener('wheel', wheelHandler)
+		}
 	})
 	return (
 		<>
@@ -34,7 +50,7 @@ export default function OnePageScroller({ children, page, setPage }) {
 			</div>
 			<ul className="fixed right-0 top-1/2 -translate-y-2/4 flex flex-col gap-1 mr-1">
 				{
-					children.map((_, index) => <li className={`cursor-pointer w-2 h-2 rounded-full ${index === page ? 'bg-black' : 'bg-zinc-300'}`} onClick={() => scroll(index)} />)
+					children.map((_, index) => <li key={index} className={`cursor-pointer w-2 h-2 rounded-full ${index === page ? 'bg-black scale-125' : 'bg-zinc-300'} duration-500`} onClick={() => scroll(index)} />)
 				}
 			</ul>
 		</>
