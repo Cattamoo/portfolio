@@ -2,18 +2,19 @@ import React from 'react';
 import Typewriter from 'typewriter-effect';
 
 export default function Layout({ className, typingEffect, title, children }) {
+	const titleClassName = 'font-title text-5xl';
 	return (
-		<section className={`w-full h-screen flex flex-col items-center justify-center ${className || ''} gap-2`}>
+		<section className={`w-full h-screen flex flex-col items-center justify-center ${className || ''} gap-2 text-center`}>
 			{
 				typingEffect
 				? <Typewriter options={{
 					strings: title,
 					autoStart: true,
 					loop: true,
-					wrapperClassName: "Typewriter__wrapper font-title text-5xl",
-					cursorClassName: "Typewriter__cursor font-title text-5xl"
+					wrapperClassName: `Typewriter__wrapper ${titleClassName}`,
+					cursorClassName: `Typewriter__cursor ${titleClassName}`
 				}} />
-				: <span className="font-title text-5xl">{title}</span>
+				: <span className={titleClassName}>{title}</span>
 			}
 			{children}
 		</section>
