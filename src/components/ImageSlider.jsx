@@ -25,8 +25,8 @@ export default function ImageSlider({ auto, width = 'w-52', height = 'h-48', cla
 			<ul className={`relative flex ${width} ${height} overflow-hidden`}>
 				{
 					items.map((item, index) => (
-						<li key={`${item.title}_${index}`} className="absolute w-max top-1/2 -translate-y-2/4 -translate-x-2/4 duration-500" style={{ left: `${(index - position) * 100 + 50}%` }}>
-							<img className="w-max h-max" src={item.url} alt={item.title} />
+						<li key={`${item.title}_${index}`} className={`absolute top-1/2 ${index === position ? 'z-1' : '-z-10'} w-full -translate-y-2/4 -translate-x-2/4 duration-500`} style={{ left: `${(index - position) * 100 + 50}%` }}>
+							<img className="w-full h-max" src={item.url} alt={item.title} />
 						</li>
 					))
 				}

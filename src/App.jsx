@@ -5,6 +5,7 @@ import Portfolio from "./pages/Portfolio";
 import ContactMe from "./pages/ContactMe";
 import OnePageScroller from "./components/OnePageScroller";
 import {useState} from "react";
+import {PortfolioFilterProvider} from "./context/PortfolioFilterContext";
 
 export default function App() {
 	const [page, setPage] = useState(0);
@@ -13,7 +14,9 @@ export default function App() {
 			<Title />
 			<Introduce />
 			<Skill />
+			<PortfolioFilterProvider>
 			<Portfolio />
+			</PortfolioFilterProvider>
 			<ContactMe />
 		</OnePageScroller>
 	);
