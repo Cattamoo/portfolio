@@ -24,13 +24,16 @@ pre {
 
 .wave {
 	padding: 3rem;
-	border-radius: 37.5%;
+	border-radius: 40%;
 	animation: move 5s infinite linear;
 }
 
 @keyframes move {
+	25% {
+		border-radius: 37.5%;
+	}
 	50% {
-		border-radius: 40%;
+		border-radius: 45.5%;
 	}
 	100% {
 		transform: rotate(360deg);
