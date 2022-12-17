@@ -1,6 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 import { isDesktop } from "react-device-detect";
 
+const titles = ['Hello, Cattamoo!', 'Introduce', 'Skill', 'Portfolio', 'ContactMe'];
+
 export default function OnePageScroller({ children, page, setPage }) {
 	const scrollDivRef = useRef();
 	const wheelHandler = (e) => {
@@ -43,6 +45,7 @@ export default function OnePageScroller({ children, page, setPage }) {
 			scrollDiv.removeEventListener('wheel', wheelHandler)
 		}
 	})
+	console.log(children)
 	return (
 		<>
 			<div ref={scrollDivRef}>
@@ -50,7 +53,9 @@ export default function OnePageScroller({ children, page, setPage }) {
 			</div>
 			<ul className="fixed right-0 top-1/2 -translate-y-2/4 flex flex-col gap-1 mr-1">
 				{
-					children.map((_, index) => <li key={index} className={`cursor-pointer w-2 h-2 rounded-full ${index === page ? 'bg-black scale-125' : 'bg-zinc-300'} duration-500`} onClick={() => scroll(index)} />)
+					children.map((_, index) => <li key={index} className={`relative cursor-pointer w-2 h-2 rounded-full ${index === page ? 'bg-black scale-125' : 'bg-zinc-300'} duration-500 group`} onClick={() => scroll(index)}>
+						<span className={`mr-1 absolute text-xs opacity-0 top-1/2 -translate-y-2/4 right-full ${index === page ? 'font-bold' : ''} duration-500 group-hover:opacity-100`}>{titles[index]}</span>
+					</li>)
 				}
 			</ul>
 		</>
