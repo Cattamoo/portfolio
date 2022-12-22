@@ -10,6 +10,9 @@ export default function ImageSlider({ auto, width = 'w-52', height = 'h-48', cla
 		setPosition(() => position === items.length - 1 ? 0 : position + 1);
 	}
 	useEffect(() => {
+		setPosition(0);
+	}, [items]);
+	useEffect(() => {
 		let autoSlide
 		if(auto) {
 			autoSlide = setInterval(() => {
@@ -19,7 +22,7 @@ export default function ImageSlider({ auto, width = 'w-52', height = 'h-48', cla
 		return () => {
 			clearInterval(autoSlide);
 		}
-	})
+	});
 	return (
 		<div className={`relative w-max h-max ${className}`}>
 			<ul className={`relative flex ${width} ${height} overflow-hidden`}>

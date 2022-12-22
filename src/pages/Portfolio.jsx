@@ -18,7 +18,7 @@ export default function Portfolio() {
 				{title: 'GithubPages', url: '/portfolio/logo192.png'}
 			],
 			description: '기존 사용하던 jekyll 대신 직접 React.js를 사용해 만든 Github Page',
-			tags: ['React', 'Javascript', 'Markdown']
+			tags: ['React', 'Javascript', 'Markdown', 'Firebase']
 		},
 		'1234-1234-1235': {
 			id: '1234-1234-1235',
@@ -56,7 +56,7 @@ export default function Portfolio() {
 				{title: 'SimpleNormalShop', url: 'https://user-images.githubusercontent.com/87294942/209177969-0f1efaea-a9cc-4f74-b7f5-e6b84fe80cc4.png'},
 			],
 			description: '쇼핑몰',
-			tags: ['React', 'Javascript']
+			tags: ['React', 'Javascript', 'Firebase']
 		}
 	});
 	const [selected, setSelected] = useState('1234-1234-1234');
@@ -64,7 +64,7 @@ export default function Portfolio() {
 		<Layout title="Portfolio">
 			<Tags tags={[...new Set(Object.values(items).map((item) => item.tags).flat())]} />
 			{ selected != null && <Viewer item={items[selected]}/> }
-			<ul className="w-full flex flex-wrap justify-center gap-2 px-2">
+			<ul className="w-full flex gap-2 px-2 overflow-x-scroll">
 				{
 					Object.values(items).filter(filtering).map((item) => (
 						<ListItem setOpen={setSelected} key={item.id} isOpen={item.id === selected} item={item} />

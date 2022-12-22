@@ -43,3 +43,13 @@ pre {
 		transform: rotate(360deg);
 	}
 }
+
+*::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #eae7dc;
+	border-radius: 5px;
+}

@@ -6,8 +6,8 @@ export default function ListItem({ item, setOpen, isOpen }) {
 		setOpen(item.id);
 	}
 	return (
-		<li className={`flex flex-col text-left ${isOpen ? 'bg-blue-300' : ''} p-2 rounded-lg`} onClick={() => openHandler(item)}>
-			<span className="text-lg font-semibold">{item.title}</span>
+		<li className={`flex flex-col text-left ${isOpen ? 'bg-[#eae7dc]' : ''} p-2 rounded-lg m-1`} onClick={() => openHandler(item)}>
+			<h2 className="text-lg font-semibold">{item.title}</h2>
 			<Tags tags={item.tags} />
 		</li>
 	);
