@@ -44,6 +44,20 @@ export default function Portfolio() {
 			description: '색상을 저장하고, 쉽게 사용하기 위한 앱',
 			tags: ['React', 'Javascript']
 		},
+		'1234-1234-1237': {
+			id: '1234-1234-1237',
+			title: 'Simple Normal Shop',
+			url: 'https://cattamoo.github.io/simple-normal-shop',
+			images: [
+				{title: 'SimpleNormalShop', url: 'https://user-images.githubusercontent.com/87294942/209177952-af87e2ab-12f8-4de7-b9e3-037b5f81c6d6.png'},
+				{title: 'SimpleNormalShop', url: 'https://user-images.githubusercontent.com/87294942/209177959-aadfe329-caeb-47e3-8bca-9c4cd13fe622.png'},
+				{title: 'SimpleNormalShop', url: 'https://user-images.githubusercontent.com/87294942/209177965-21a08b7f-31c3-4116-8d65-b74084375a2b.png'},
+				{title: 'SimpleNormalShop', url: 'https://user-images.githubusercontent.com/87294942/209177966-f52fc654-88b6-40c0-b537-e00e35ed6f55.png'},
+				{title: 'SimpleNormalShop', url: 'https://user-images.githubusercontent.com/87294942/209177969-0f1efaea-a9cc-4f74-b7f5-e6b84fe80cc4.png'},
+			],
+			description: '쇼핑몰',
+			tags: ['React', 'Javascript']
+		}
 	});
 	const [selected, setSelected] = useState('1234-1234-1234');
 	return (
