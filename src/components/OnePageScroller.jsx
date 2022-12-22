@@ -45,7 +45,6 @@ export default function OnePageScroller({ children, page, setPage }) {
 			scrollDiv.removeEventListener('wheel', wheelHandler)
 		}
 	})
-	console.log(children)
 	return (
 		<>
 			<div ref={scrollDivRef}>
