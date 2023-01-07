@@ -1,9 +1,10 @@
 import PageLayout from "../layout/PageLayout";
+import Title from "../ui/Title";
 
 export default function Introduce() {
 	return (
 		<PageLayout>
-			<h2>소개합니다!</h2>
+			<Title title="Introduce" />
 		</PageLayout>
 	);
 }
