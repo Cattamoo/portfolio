@@ -16,6 +16,10 @@ body {
   @apply h-screen flex flex-col items-center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 pre {
   font-family: 'Gowun Dodum', sans-serif;
 }
@@ -32,9 +36,7 @@ pre {
 .popup .title {
   @apply w-full bg-popupTitle flex justify-between items-center px-2 py-1;
 }
-.popup.disabled .title {
-  @apply bg-popupTitle;
-}
+
 .popup .body {
   @apply px-2 py-1 overflow-auto;
 }

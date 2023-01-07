@@ -41,7 +41,7 @@ export default function Popup({id, title, open, children, onClose, onMove}: Prop
 				onStart={(e, data) => handleDragStart(e, data)}
 				onDrag={() => onMove(id)}
 			>
-				<div ref={dragRef} className={`popup ${disabled ? 'disabled' : ''}`} onClick={() => onMove(id)}>
+				<div ref={dragRef} className={`popup`} onClick={() => onMove(id)}>
 					{titleElement}
 					{children}
 				</div>
