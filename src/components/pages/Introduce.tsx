@@ -8,7 +8,7 @@ export default function Introduce() {
 		<PageLayout>
 			<Title title="Introduce" />
 			<div className="flex relative items-start">
-				<img className="sticky top-2 w-36 aspect-[3/4] object-cover" src="/images/no_image.png" alt="profile" />
+				<img className="sticky top-2 w-36 aspect-[3/4] object-cover" src={`${process.env.PUBLIC_URL}/images/no_image.png`} alt="profile" />
 				<div className="flex-1 overflow-auto">
 					<Input title="이름" value="이예진" disabled={true} />
 					<Input title="생년월일" value="1998.04.19" disabled={true} />
