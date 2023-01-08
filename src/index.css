@@ -43,3 +43,24 @@ pre {
 .popup .body {
   @apply px-2 py-1 overflow-auto;
 }
+
+/**
+ *  Progress 파도 애니메이션
+ */
+.wave {
+  padding: 3rem;
+  border-radius: 40%;
+  animation: move 5s infinite linear;
+}
+
+@keyframes move {
+  25% {
+    border-radius: 37.5%;
+  }
+  50% {
+    border-radius: 45.5%;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
