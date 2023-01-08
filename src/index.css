@@ -20,6 +20,14 @@ body {
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  @apply w-1 h-1;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-main/50;
+}
+
 pre {
   font-family: 'Gowun Dodum', sans-serif;
 }
