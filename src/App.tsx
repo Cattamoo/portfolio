@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import {IconType} from "react-icons";
 import {RiUserStarFill} from "react-icons/ri";
 import {GiSkills} from "react-icons/gi";
-import {MdMail, MdMonitor} from "react-icons/md";
+import {MdMonitor} from "react-icons/md";
+import {IoIosMail} from "react-icons/io";
 import Icon from "./components/ui/Icon";
 import Popup from "./components/ui/Popup";
 import Introduce from "./components/pages/Introduce";
@@ -22,7 +23,7 @@ const initialItems = [
 	{ id: '1', icon: RiUserStarFill, title: 'Introduce', open: false, children: <Introduce /> },
 	{ id: '2', icon: GiSkills, title: 'Skills', open: false, children: <Skill /> },
 	{ id: '3', icon: MdMonitor, title: 'Portfolio', open: false, children: <Portfolio /> },
-	{ id: '4', icon: MdMail, title: 'ContactMe', open: false, children: <ContactMe /> },
+	{ id: '4', icon: IoIosMail, title: 'ContactMe', open: false, children: <ContactMe /> },
 ];
 
 export default function App() {
