@@ -21,26 +21,28 @@ type Category = {
 	projects?: Project[];
 }
 
+const items: Category[] = [
+	{
+		id: '1',
+		title: 'VanillaJS',
+		icon: SiJavascript,
+		projects: [
+			{id: '1-1', title: 'Paint', icon: RiPaintBrushFill, url: 'https://github.com/cattamoo/paint'}
+		]
+	},
+	{
+		id: '2',
+		title: 'React',
+		icon: SiReact,
+		projects: [
+			{id: '2-1', title: 'Markdown Editor', icon: RiFileEditFill, url: 'https://github.com/cattamoo/editor'}
+		]
+	}
+];
+
 export default function Portfolio() {
 	const [current, setCurrent] = useState<string[]>([]);
-	const items: Category[] = [
-		{
-			id: '1',
-			title: 'VanillaJS',
-			icon: SiJavascript,
-			projects: [
-				{id: '1-1', title: 'Paint', icon: RiPaintBrushFill, url: 'https://github.com/cattamoo/paint'}
-			]
-		},
-		{
-			id: '2',
-			title: 'React',
-			icon: SiReact,
-			projects: [
-				{id: '2-1', title: 'Markdown Editor', icon: RiFileEditFill, url: 'https://github.com/cattamoo/editor'}
-			]
-		}
-	];
+
 	const handlePageOpen = (url: string) => {
 		const a = document.createElement('a');
 		a.href = url;

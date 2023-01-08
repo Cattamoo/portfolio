@@ -8,14 +8,15 @@ type SkillItemType = {
 	color: string;
 }
 
+const skills: SkillItemType[] = [
+	{title: 'HTML', size: 95, color: 'bg-[#e34c26]'},
+	{title: 'CSS', size: 78, color: 'bg-[#264de4]'},
+	{title: 'Javascript', size: 97.6, color: 'bg-[#f7df1e]'},
+	{title: 'Typescript', size: 67.2, color: 'bg-[#3178c6]'},
+	{title: 'React', size: 83, color: 'bg-[#61dafb]'},
+]
+
 export default function Skill() {
-	const skills: SkillItemType[] = [
-		{title: 'HTML', size: 95, color: 'bg-[#e34c26]'},
-		{title: 'CSS', size: 78, color: 'bg-[#264de4]'},
-		{title: 'Javascript', size: 97.6, color: 'bg-[#f7df1e]'},
-		{title: 'Typescript', size: 67.2, color: 'bg-[#3178c6]'},
-		{title: 'React', size: 83, color: 'bg-[#61dafb]'},
-	]
 	return (
 		<PageLayout>
 			<Title title="Skills" />
