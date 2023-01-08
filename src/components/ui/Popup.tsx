@@ -10,9 +10,10 @@ type Props = {
 	children: React.ReactNode;
 	onClose: (id: string) => void;
 	onMove: (id: string) => void;
+	className?: string;
 }
 
-export default function Popup({id, title, open, children, onClose, onMove}: Props) {
+export default function Popup({id, title, open, children, onClose, onMove, className = ''}: Props) {
 	const dragRef = useRef<HTMLDivElement>(null);
 	const [disabled, setDisabled] = useState(false);
 	const [bounds, setBounds] = useState({ left: 0, top: 0, bottom: 0, right: 0 });
@@ -41,7 +42,7 @@ export default function Popup({id, title, open, children, onClose, onMove}: Prop
 				onStart={(e, data) => handleDragStart(e, data)}
 				onDrag={() => onMove(id)}
 			>
-				<div ref={dragRef} className={`popup`} onClick={() => onMove(id)}>
+				<div ref={dragRef} className={`popup ${className}`} onClick={() => onMove(id)}>
 					{titleElement}
 					{children}
 				</div>

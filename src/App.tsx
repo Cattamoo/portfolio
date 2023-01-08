@@ -61,8 +61,8 @@ export default function App() {
 				}
 			</div>
 			{
-				items.map((item) => (
-					<Popup key={item.id} id={item.id} title={item.title} open={item.open} onClose={handleClose} onMove={handleMove}>
+				items.map((item, idx) => (
+					<Popup className={idx === items.length - 1 ? 'focus' : ''} key={item.id} id={item.id} title={item.title} open={item.open} onClose={handleClose} onMove={handleMove}>
 						{item.children}
 					</Popup>
 				))

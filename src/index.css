@@ -34,7 +34,10 @@ pre {
 }
 
 .popup .title {
-  @apply w-full bg-popupTitle flex justify-between items-center px-2 py-1;
+  @apply w-full bg-main flex justify-between items-center px-2 py-1;
+}
+.popup.focus .title {
+  @apply bg-popupTitle;
 }
 
 .popup .body {
