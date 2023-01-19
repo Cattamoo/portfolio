@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {IconType} from "react-icons";
 import {FaAngleLeft} from "react-icons/fa";
 import {SiJavascript, SiReact} from "react-icons/si";
-import {RiFileEditFill, RiPaintBrushFill} from "react-icons/ri";
+import {RiComputerLine, RiFileEditFill, RiPaintBrushFill} from "react-icons/ri";
 import {AiTwotoneShop} from "react-icons/ai";
 import PageLayout from "../layout/PageLayout";
 import Title from "../ui/Title";
@@ -37,7 +37,8 @@ const items: Category[] = [
 		icon: SiReact,
 		projects: [
 			{id: '2-1', title: 'Markdown Editor', icon: RiFileEditFill, url: 'https://github.com/cattamoo/editor'},
-			{id: '2-2', title: 'Simple Normal Shop', icon: AiTwotoneShop, url: 'https://github.com/cattamoo/simple-normal-shop'}
+			{id: '2-2', title: 'Simple Normal Shop', icon: AiTwotoneShop, url: 'https://github.com/cattamoo/simple-normal-shop'},
+			{id: '2-3', title: 'Colorful Log Maker', icon: RiComputerLine, url: 'https://github.com/cattamoo/colorful-log-maker'}
 		]
 	}
 ];
